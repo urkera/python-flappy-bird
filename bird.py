@@ -16,8 +16,7 @@ class Bird(BaseItem):
             self.pixmap = pixmap
         else:
             self.brush = QBrush(QColor(153, 153, 0))
-
-            p = QPen(QColor(0,0,0))
+            p = QPen(QColor(0, 0, 0))
             p.setWidth(2)
             self.pen = p
 
@@ -38,7 +37,7 @@ class Bird(BaseItem):
 
     def paint(self, painter, option, widget=None):
         if self.pixmap is not None:
-            painter.drawPixmap(QPointF(0,0), self.pixmap)
+            painter.drawPixmap(QPointF(0, 0), self.pixmap)
         else:
             painter.setBrush(self.brush)
             painter.setPen(self.pen)

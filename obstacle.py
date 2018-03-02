@@ -4,14 +4,15 @@ from baseItem import BaseItem
 
 
 class PipeItem(BaseItem):
-    def __init__(self, pen, brush, x=None, y=None, w=None, h=None):
-        super(PipeItem, self).__init__(pen, brush)
+    def __init__(self, x=None, y=None, w=None, h=None):
+        super(PipeItem, self).__init__()
         self.rect = QRectF(x, y, w, h)
 
         gradient = QLinearGradient(0, 0, w, 0)
         gradient.setColorAt(0.0, QColor(56, 180, 74))
         gradient.setColorAt(0.5, QColor(151, 180, 56, 225))
         gradient.setColorAt(1.0, QColor(56, 180, 74))
+
         self.brush = QBrush(gradient)
 
         p = QPen(QColor(0, 0, 0))
@@ -31,10 +32,10 @@ class PipeItem(BaseItem):
 
 
 class Obstacle(QGraphicsItemGroup):
-    def __init__(self, pen=None, brush=None, w=None, h=None):
+    def __init__(self, w=None, h=None):
         super(Obstacle, self).__init__()
-        self.rect1 = PipeItem(pen, brush, 0, 0, w, h)
-        self.rect2 = PipeItem(pen, brush, 0, h + 120, w, 280 - h)
+        self.rect1 = PipeItem(0, 0, w, h)
+        self.rect2 = PipeItem(0, h + 120, w, 280 - h)
 
         self.addToGroup(self.rect1)
         self.addToGroup(self.rect2)

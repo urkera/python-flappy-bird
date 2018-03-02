@@ -104,6 +104,10 @@ class Window(QMainWindow, Ui_MainWindow):
         bird_rect = self.bird.get_rect()
         self.scene.update()
         self.bird.update()
+        bird_pos = self.bird.scenePos()
+        if (bird_pos.y() >= self.h - (2 * self.bird.r)) or (bird_pos.y() <= 0):
+            self.set_animation_state(False)
+            return
         for obs in self.obstacles:
             obs_rects = obs.get_rects()
             obs.update()
