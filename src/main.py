@@ -43,8 +43,7 @@ class Window(QMainWindow, Ui_MainWindow):
         text.setHtml("<b>Oyuna Başlamak İçin F5 Tuşuna Basın...<br>"
                      "Space Tuşuna Basarak Zıplayabilirsiniz<br>"
                      "Engellere takıldığınızda tekrar başlamak için<br>"
-                     "Tekrar F5 tuşuna basınız.</b><br>"
-                     "<div>İletişim : urkera@gmail.com</div>")
+                     "Tekrar F5 tuşuna basınız.</b><br>")
         text.setFont(QFont("Verdana", 16))
         text.setDefaultTextColor(QColor(0, 169, 230))
         text.setPos(QPointF(20, 130))
